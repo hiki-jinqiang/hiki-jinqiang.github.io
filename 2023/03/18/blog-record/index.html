@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta 
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta 
+    http-equiv="X-UA-Compatible" 
+    content="ie=edge">
+  <meta 
+    name="theme-color" 
+    content="#fff" 
+    id="theme-color">
+  <meta 
+    name="description" 
+    content="Hexo">
+  <link 
+    rel="icon" 
+    href="/">
+  <title>Blog Diary</title>
+  
+    
+      <meta 
+        property="og:title" 
+        content="Blog Diary">
+    
+    
+      <meta 
+        property="og:url" 
+        content="http://example.com/2023/03/18/blog-record/index.html">
+    
+    
+      <meta 
+        property="og:img" 
+        content="https://raw.githubusercontent.com/hiki-jinqiang/PictureBed/main/test/202303181420375.jpg">
+    
+    
+    
+      <meta 
+        property="og:type" 
+        content="article">
+      <meta 
+        property="og:article:published_time" 
+        content="2023-03-18">
+      <meta 
+        property="og:article:modified_time" 
+        content="2023-03-18">
+      <meta 
+        property="og:article:author" 
+        content="Hikin">
+      
+        
+          <meta 
+            property="og:article:tag" 
+            content="界面设计">
+        
+      
+    
+  
+  
+  <link rel="preload" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css" as="style" >
+  <link rel="preload" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css" as="style" >
+  <link rel="preload" href="/css/main.css" as="style" >
+  
+  <link rel="modulepreload" href="//instant.page/5.1.0">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
+  
+  
+  
+    <link rel="stylesheet" href="/js/lib/lightbox/baguetteBox.min.css">
+  
+  <script>
+    function loadScript(url, cb) {
+      var script = document.createElement('script');
+      script.src = url;
+      if (cb) script.onload = cb;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+    function loadCSS(href, data, attr) {
+      var sheet = document.createElement('link');
+      sheet.ref = 'stylesheet';
+      sheet.href = href;
+      sheet.dataset[data] = attr;
+      document.head.appendChild(sheet);
+    }
+    function changeCSS(cssFile, data, attr) {
+      var oldlink = document.querySelector(data);
+      var newlink = document.createElement("link");
+      newlink.setAttribute("rel", "stylesheet");
+      newlink.setAttribute("href", cssFile);
+      newlink.dataset.prism = attr;
+      document.head.replaceChild(newlink, oldlink);
+    }
+  </script>
+  
+    
+  
+  <script>
+    // control reverse button
+    var reverseDarkList = {
+      dark: 'light',
+      light: 'dark'
+    };
+    var themeColor = {
+      dark: '#1c1c1e',
+      light: '#fff'
+    }
+    // get the data of css prefers-color-scheme
+    var getCssMediaQuery = function() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+    // reverse current darkmode setting function
+    var reverseDarkModeSetting = function() {
+      var setting = localStorage.getItem('user-color-scheme');
+      if(reverseDarkList[setting]) {
+        setting = reverseDarkList[setting];
+      } else if(setting === null) {
+        setting = reverseDarkList[getCssMediaQuery()];
+      } else {
+        return;
+      }
+      localStorage.setItem('user-color-scheme', setting);
+      return setting;
+    };
+    // apply current darkmode setting
+  </script>
+  
+    <script>
+      var setDarkmode = function(mode) {
+      var setting = mode || localStorage.getItem('user-color-scheme');
+      if(setting === getCssMediaQuery()) {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+      } else if(reverseDarkList[setting]) {
+        document.documentElement.setAttribute('data-user-color-scheme', setting);
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+      } else {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
+        document.getElementById('theme-color').dataset.mode = getCssMediaQuery();
+      }
+    };
+    setDarkmode();
+    </script>
+  
+  
+  
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.js" as="script">
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lozad.min.js" as="script">
+  
+  
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+  <body>
+    <div class="wrapper">
+       
+      <nav class="navbar">
+  <div class="navbar-logo">
+    <a class="navbar-logo-main" href="/">
+      
+      <span class="navbar-logo-dsc">Hikin Blog</span>
+      </a>
+  </div>
+  <div class="navbar-menu">
+    
+      <a 
+        href="/" 
+        class="navbar-menu-item">
+        
+          首页
+        
+      </a>
+    
+      <a 
+        href="/archives" 
+        class="navbar-menu-item">
+        
+          归档
+        
+      </a>
+    
+      <a 
+        href="/tags" 
+        class="navbar-menu-item">
+        
+          标签
+        
+      </a>
+    
+      <a 
+        href="/categories" 
+        class="navbar-menu-item">
+        
+          分类
+        
+      </a>
+    
+      <a 
+        href="/about" 
+        class="navbar-menu-item">
+        
+          关于
+        
+      </a>
+    
+      <a 
+        href="/links" 
+        class="navbar-menu-item">
+        
+          友链
+        
+      </a>
+    
+    <button 
+      class="navbar-menu-item darknavbar navbar-menu-btn" 
+      aria-label="Toggle dark mode"
+      id="dark">
+      <i class="iconfont icon-weather"></i>
+    </button>
+    <button 
+      class="navbar-menu-item searchnavbar navbar-menu-btn" 
+      aria-label="Toggle search"
+      id="search">
+      <!-- <i 
+        class="iconfont icon-search" 
+        style="font-size: 1.2rem; font-weight: 400;">
+      </i> -->
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"
+        class="iconify iconify--ion" width="28" height="28" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512">
+        <path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="28"
+          d="M256 80a176 176 0 1 0 176 176A176 176 0 0 0 256 80Z"></path>
+        <path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="28"
+          d="M232 160a72 72 0 1 0 72 72a72 72 0 0 0-72-72Z"></path>
+        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="28"
+          d="M283.64 283.64L336 336"></path>
+      </svg>
+    </button>
+  </div>
+</nav> 
+      
+      <div 
+        id="local-search" 
+        style="display: none">
+        <input
+          class="navbar-menu-item"
+          id="search-input"
+          placeholder="请输入搜索内容..." />
+        <div id="search-content"></div>
+      </div>
+      
+      <div class="section-wrap">
+        <div class="container">
+          <div class="columns">
+            <aside class="left-column">
+              
+              <div class="card card-author">
+                
+  <img 
+    src="https://raw.githubusercontent.com/hiki-jinqiang/PictureBed/main/test/202303181420375.jpg" 
+    class="author-img"
+    width="88"
+    height="88"
+    alt="author avatar">
+
+<p class="author-name">Hikin</p>
+<p class="author-description">自强不息，学思同行</p>
+<div class="author-message">
+  <a 
+    class="author-posts-count" 
+    href="/archives">
+    <span>2</span>
+    <span>文章</span>
+  </a>
+  <a 
+    class="author-categories-count" 
+    href="/categories">
+    <span>1</span>
+    <span>分类</span>
+  </a>
+  <a 
+    class="author-tags-count" 
+    href="/tags">
+    <span>1</span>
+    <span>标签</span>
+  </a>
+</div>
+
+<br>
+<div class="column">
+  <a target="_blank" rel="noopener" href="https://space.bilibili.com/349769101"><img src="https://raw.githubusercontent.com/hiki-jinqiang/PictureBed/main/test/202303181928171.png" style="width: 20px; height: 20px;"></a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a target="_blank" rel="noopener" href="https://github.com/hiki-jinqiang"><img src="https://raw.githubusercontent.com/hiki-jinqiang/PictureBed/main/test/202303181929072.png" style="width: 20px; height: 20px;"></a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a target="_blank" rel="noopener" href="https://hw.mail.163.com"><img src="https://raw.githubusercontent.com/hiki-jinqiang/PictureBed/main/test/202303181930217.png" style="width: 20px; height: 20px;"></a>
+</div>
+
+
+              </div>
+               <div class="sticky-tablet">
+  
+  
+    <article class="display-when-two-columns spacer">
+      <div class="card card-content toc-card">
+        <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#This-is-a-test"><span class="toc-text">This is a test</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0%EF%BC%9A"><span class="toc-text">概述：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B%EF%BC%9A"><span class="toc-text">搭建流程：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8C%E5%B9%B3%E5%8F%B0%E9%80%89%E6%8B%A9"><span class="toc-text">服务器，平台选择</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#hexo%E6%90%AD%E5%BB%BA%EF%BC%9A"><span class="toc-text">hexo搭建：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8A%E4%BC%A0%E6%AD%A5%E9%AA%A4"><span class="toc-text">上传步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E5%A5%97%E6%B5%81%E7%A8%8B"><span class="toc-text">一套流程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ISSUE%EF%BC%9A"><span class="toc-text">ISSUE：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="toc-text">总结：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99%EF%BC%9A"><span class="toc-text">参考资料：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text"></span></a></li></ol></li></ol>
+      </div>
+    </article>
+  
+  
+  <article class="card card-content categories-widget">
+    <div class="categories-card">
+  <div class="categories-header">
+    <i 
+      class="iconfont icon-fenlei" 
+      style="padding-right: 2px;">
+    </i>分类
+  </div>
+  <div class="categories-list">
+    
+      <a href="/categories/%E7%BD%91%E9%A1%B5%E5%89%8D%E7%AB%AF/">
+        <div class="categories-list-item">
+          网页前端
+          <span class="categories-list-item-badge">1</span>
+        </div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  <article class="card card-content tags-widget">
+    <div class="tags-card">
+  <div class="tags-header">
+    <i 
+      class="iconfont icon-biaoqian" 
+      style="padding-right: 2px;">
+    </i>热门标签
+  </div>
+  <div class="tags-list">
+    
+      <a 
+        href="/tags/%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/" 
+        title="界面设计">
+        <div class="tags-list-item">界面设计</div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+            <main class="main-column">
+              
+<article class="card card-content">
+  <header>
+    <h1 class="post-title">
+      Blog Diary
+    </h1>
+  </header>
+  <div class="post-meta post-show-meta">
+    <time datetime="2023-03-18T06:26:15.014Z">
+      <i 
+        class="iconfont icon-calendar" 
+        style="margin-right: 2px;">
+      </i>
+      <span>2023-03-18</span>
+    </time>
+    
+      <span class="dot"></span>
+      
+        <a 
+          href="/categories/%E7%BD%91%E9%A1%B5%E5%89%8D%E7%AB%AF/" 
+          class="post-meta-link">
+          网页前端
+        </a>
+      
+    
+    
+      <span class="dot"></span>
+      <span>927 字</span>
+    
+  </div>
+  
+    <div 
+      class="post-meta post-show-meta" 
+      style="margin-top: -10px;">
+      <div style="display: flex; align-items: center;">
+        <i 
+          class="iconfont icon-biaoqian" 
+          style="margin-right: 2px; font-size: 1.15rem;">
+        </i>
+        
+          
+          <a 
+            href="/tags/%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1/" 
+            class="post-meta-link">
+            界面设计
+          </a>
+        
+      </div>
+    </div>
+  
+  </header>
+  <div 
+    id="section" 
+    class="post-content">
+    <h2 id="This-is-a-test"><a href="#This-is-a-test" class="headerlink" title="This is a test"></a>This is a test</h2><h3 id="概述："><a href="#概述：" class="headerlink" title="概述："></a>概述：</h3><p>​			本着找工作中，博客的重要性，引发我对博客搭建和资料保存的思考，因此有了这偏文章；</p>
+<p>​			就搭博客而言好处如下：</p>
+<p>​					1-是对自己所做所为的总结和记录，同时可以方便日常翻阅，对回顾有好处；</p>
+<p>​					2-是一直展现平台，对以后的交流以及一定证明带有保证性；</p>
+<p>​					3-是技术和记录素养的体现，同时增加成就感；</p>
+<p>​			缺点如下：</p>
+<p>​					1-花费时间搭建平台，同时对以后任何项目和事物都增加了一个格外的步骤，记录和总结；</p>
+<p>​					2-就以后而言，需要一定时间精力和金钱去维持该博客；</p>
+<p>​			综上所述，搭建博客是很有必要，同时也要积极维护。</p>
+<h3 id="搭建流程："><a href="#搭建流程：" class="headerlink" title="搭建流程："></a>搭建流程：</h3><h4 id="服务器，平台选择"><a href="#服务器，平台选择" class="headerlink" title="服务器，平台选择"></a>服务器，平台选择</h4><h4 id="hexo搭建："><a href="#hexo搭建：" class="headerlink" title="hexo搭建："></a>hexo搭建：</h4><p>​								主题选择：主题虽然多，但是坑也不少，很多主题所拥有的参考资料少，操作复杂。对于不懂得JavaScript语法和前端知识的人而言，选择好主题是很有必要的，主体的好坏体现在几方面：</p>
+<p>​															1-扩展性&amp;功能性（查询，字数总结，优化）</p>
+<p>​															2-美观简洁</p>
+<p>​															3-简单容易操作理解（照顾我这种新手）</p>
+<p>我的主题选择：<a target="_blank" rel="noopener" href="https://github.com/theme-kaze/hexo-theme-Kaze">theme-kaze&#x2F;hexo-theme-kaze: ⛵ A responsive, modern Hexo theme (github.com)</a></p>
+<p>到目前为止的坑：	1-更换字体（en，zh-ch（简体），zh-tw（繁体）），<strong>需要将相关的yml文件放入根目录下，并更改根目录下默认的_config.yml文件中										language选项</strong></p>
+<p>​									2-对于修改图片模式，考虑一般用网上的图片，<strong>就此引出图床概念</strong>。</p>
+<p>​											图床：将图片上传到网上，便于各文件加载，避免因为图片的本地加载，导致的图片在不同电脑用户之间无法正常打开的情况；</p>
+<p>​											技术实现：	</p>
+<p>​															1-储存图片的服务。包括：github，gitee，腾讯云，阿里云，七牛云</p>
+<p>​																	总结：github受网络限制太多，不建议使用，但是我这边也可以尝试一下，可能是自己的地址填写错误；</p>
+<p>​																				七牛云：需要使用域名，现在使用体验域名，只有一个月的使用体验。可以对七牛云进行学习，blog直接布置在七																								牛云上，10GB免费够用了。</p>
+<p>​															2-链接图片：网址连接，图片的上传，下载和加载	</p>
+<p>​																					picgo都可完成，也好用，但是就是那种错误的机制，太不细节了，不能就给网络连接错误呀。</p>
+<p>​																					typro的两种方式：</p>
+<p>​																													1-本地简历imag文件，使用相对地址，连着markdown和imag文件就可以上传了。</p>
+<p>​																													2-就是网上图片地址加载		URL是关键；</p>
+<p>​											</p>
+<p>​								</p>
+<h4 id="上传步骤"><a href="#上传步骤" class="headerlink" title="上传步骤"></a>上传步骤</h4><h4 id="一套流程"><a href="#一套流程" class="headerlink" title="一套流程"></a>一套流程</h4><h3 id="ISSUE："><a href="#ISSUE：" class="headerlink" title="ISSUE："></a>ISSUE：</h3><h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><h3 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h3><p>​			我的主题选择：<a target="_blank" rel="noopener" href="https://github.com/theme-kaze/hexo-theme-Kaze">theme-kaze&#x2F;hexo-theme-kaze: ⛵ A responsive, modern Hexo theme (github.com)</a></p>
+<p>​		picgo：	GIthub：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/4a29945ad69c">Github + PicGo + jsDelivr 创建稳定、免费图床 - 简书 (jianshu.com)</a></p>
+<p>​							七牛云：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/141610018">picgo使用七牛云图床 - 知乎 (zhihu.com)</a></p>
+<p>​											[Typora+PicGo+七牛云搭建图床 - 腾讯云开发者社区-腾讯云 (tencent.com)](<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1834661#:~:text=Typora%2BPicGo%2B%E4%B8%83%E7%89%9B%E4%BA%91%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A">https://cloud.tencent.com/developer/article/1834661#:~:text=Typora%2BPicGo%2B七牛云搭建图床</a> 1 PicGo也是直接上github上下载最新版本即可，有关PicGo的一些安装配置，可以访问我以前写过的博文： github搭建图床 使用阿里云对象存储OSS%2BPicGo搭建图床 使用七牛云和PicGo搭建图床 2 PicGo,服务器 ，用于配合其他应用来调用 PicGo 进行上传。 3 打开PicGo设置，进入 PicGo 设置–设置Server)</p>
+<p>​						typro：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/265077468">hexo博客如何插入图片 - 知乎 (zhihu.com)</a></p>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3>
+  </div>
+  <div>
+    
+      <div 
+        class="post-note note-warning copyright" 
+        style="margin-top: 42px">
+        <p>
+          <span style="font-weight: bold;">作者：</span><a 
+            target="_blank" 
+            rel="nofollow noopener noreferrer" 
+            href="/about">
+            Hikin
+          </a>
+        </p>
+        <p>
+          <span style="font-weight: bold;">文章链接：</span><a 
+            target="_blank" 
+            rel="nofollow noopener noreferrer" 
+            href="http://example.com/2023/03/18/blog-record/">
+            http://example.com/2023/03/18/blog-record/
+          </a>
+        </p>
+        <p><span style="font-weight: bold;">版权声明：</span>本博客所有文章除特别声明外，均采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 协议</a>。转载请注明出处！</p>
+      </div>
+    
+  </div>
+</article>
+<div class="nav">
+  
+  
+    <div class="nav-item-next">
+      <a 
+        href="/2023/03/16/hello-world/" 
+        class="nav-link">
+        <div>
+          <div class="nav-label">下一篇</div>
+          
+            <div class="nav-title">Hello World </div>
+          
+        </div>
+        <i class="iconfont icon-right nav-next-icon"></i>
+      </a>
+    </div>
+  
+</div>
+
+<div 
+  class="card card-content toc-card" 
+  id="mobiletoc">
+  <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#This-is-a-test"><span class="toc-text">This is a test</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0%EF%BC%9A"><span class="toc-text">概述：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B%EF%BC%9A"><span class="toc-text">搭建流程：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8C%E5%B9%B3%E5%8F%B0%E9%80%89%E6%8B%A9"><span class="toc-text">服务器，平台选择</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#hexo%E6%90%AD%E5%BB%BA%EF%BC%9A"><span class="toc-text">hexo搭建：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8A%E4%BC%A0%E6%AD%A5%E9%AA%A4"><span class="toc-text">上传步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E5%A5%97%E6%B5%81%E7%A8%8B"><span class="toc-text">一套流程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ISSUE%EF%BC%9A"><span class="toc-text">ISSUE：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="toc-text">总结：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99%EF%BC%9A"><span class="toc-text">参考资料：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text"></span></a></li></ol></li></ol>
+</div>
+            </main>
+            <aside class="right-column">
+              <div class="sticky-widescreen">
+  
+  
+    <article class="card card-content toc-card">
+      <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>目录
+</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#This-is-a-test"><span class="toc-text">This is a test</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0%EF%BC%9A"><span class="toc-text">概述：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B%EF%BC%9A"><span class="toc-text">搭建流程：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8C%E5%B9%B3%E5%8F%B0%E9%80%89%E6%8B%A9"><span class="toc-text">服务器，平台选择</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#hexo%E6%90%AD%E5%BB%BA%EF%BC%9A"><span class="toc-text">hexo搭建：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8A%E4%BC%A0%E6%AD%A5%E9%AA%A4"><span class="toc-text">上传步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E5%A5%97%E6%B5%81%E7%A8%8B"><span class="toc-text">一套流程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ISSUE%EF%BC%9A"><span class="toc-text">ISSUE：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="toc-text">总结：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99%EF%BC%9A"><span class="toc-text">参考资料：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text"></span></a></li></ol></li></ol>
+    </article>
+  
+  
+  <article class="card card-content">
+    <div class="recent-posts-card">
+  <div class="recent-posts-header">
+    <i 
+      class="iconfont icon-wenzhang_huaban" 
+      style="padding-right: 2px;">
+    </i>最近文章
+  </div>
+  <div class="recent-posts-list">
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2023-03-18</div>
+        <a href="/2023/03/18/blog-record/"><div class="recent-posts-item-content">Blog Diary</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2023-03-16</div>
+        <a href="/2023/03/16/hello-world/"><div class="recent-posts-item-content">Hello World</div></a>
+      </div>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <footer class="footer">
+  <div class="footer-container">
+    <div>
+      <div class="footer-dsc">
+        <span>
+          additional information ©
+          
+            2023
+          
+          
+        </span>
+        ---Blog address:
+        &nbsp;
+        <a 
+          href="/" 
+          class="footer-link">
+          Hikin Blog
+        </a>
+      </div>
+    </div>
+
+    
+      <div class="footer-dsc">
+        
+          My Github address 
+          <a 
+            href="https://github.com/hiki-jinqiang" 
+            class="footer-link" 
+            target="_blank" 
+            rel="nofollow noopener noreferrer">
+            &nbsp;hiki-jinqiang
+          </a>
+        
+        
+          <span>&nbsp;|&nbsp;</span>
+        
+        
+          Theme kaze--
+          <a 
+            href="https://github.com/theme-kaze" 
+            class="footer-link" 
+            target="_blank"
+            rel="nofollow noopener noreferrer">
+            &nbsp;kaze
+          </a>
+        
+      </div>
+    
+    
+    
+    
+</footer>
+ 
+    
+  <a 
+    role="button" 
+    id="scrollbutton" 
+    class="basebutton" 
+    aria-label="回到顶部">
+    <i class="iconfont icon-arrowleft button-icon"></i>
+  </a>
+
+<a 
+  role="button" 
+  id="menubutton"
+  aria-label="menu button"
+  class="basebutton">
+  <i class="iconfont icon-menu button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="popbutton" 
+  class="basebutton" 
+  aria-label="控制中心">
+  <i class="iconfont icon-expand button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="darkbutton" 
+  class="basebutton darkwidget" 
+  aria-label="夜色模式">
+  <i class="iconfont icon-weather button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="searchbutton" 
+  class="basebutton searchwidget" 
+  aria-label="搜索">
+  <i class="iconfont icon-search button-icon"></i>
+</a> 
+     
+     
+     
+      <script>
+  var addImgLayout = function () {
+    var img = document.querySelectorAll('.post-content img')
+    var i
+    for (i = 0; i < img.length; i++) {
+      var wrapper = document.createElement('a')
+      wrapper.setAttribute('href', img[i].getAttribute('data-src'))
+      wrapper.setAttribute('aria-label', 'illustration')
+      wrapper.style.cssText =
+        'width: 100%; display: flex; justify-content: center;'
+      if (img[i].alt) wrapper.dataset.caption = img[i].alt
+      wrapper.dataset.nolink = true
+      img[i].before(wrapper)
+      wrapper.append(img[i])
+      var divWrap = document.createElement('div')
+      divWrap.classList.add('gallery')
+      wrapper.before(divWrap)
+      divWrap.append(wrapper)
+    }
+    baguetteBox.run('.gallery')
+  }
+</script>
+<script>
+  loadScript(
+    "/js/lib/lightbox/baguetteBox.min.js",
+    addImgLayout
+  )
+</script>
+ 
+     
+     
+    <script src="/js/main.js"></script> 
+     
+    
+      <script>
+        var addLazyload = function () {
+          var observer = lozad('.lozad', {
+            load: function (el) {
+              el.srcset = el.getAttribute('data-src')
+            },
+            loaded: function (el) {
+              el.classList.add('loaded')
+            },
+          })
+          observer.observe()
+        }
+      </script>
+      <script>
+        loadScript('/js/lib/lozad.min.js', addLazyload)
+      </script>
+    
+    <script src="//instant.page/5.1.0" type="module"
+      integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+    
+    
+      <script>
+        setTimeout(() => {localSearch("search.json")}, 0)
+      </script>
+    
+  </body>
+</html>
